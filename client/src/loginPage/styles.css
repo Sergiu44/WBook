@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 75%;
+    background-color: #FAF0DC;
+}
+
+.right {
+    position: absolute;
+    width: 40%;
+    left: 60%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 25% 100%);
+}
+
+.loginImg {
+    height: 100vh;
+    width: 100%;
+}
+
+#login, #signup, #step2 {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 45%;
+    height: 50%;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    min-width: 350px;
+}
+
+.logo {
+    margin: 30px auto 40px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.loginForm > input {
+    padding: 10px 4px;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    margin-bottom: 8px;
+}
+
+.loginForm > input:focus, input:active {
+    outline: 0;
+    border: 0.0625rem solid #009cde;
+    box-shadow: inset 0 0 0 0.0625rem #009cde;
+    border-radius: 6px;
+}
+
+#email {
+    margin-bottom: 8px;
+}
+
+.forgot {
+    display: inline-block;
+    min-width: 50%;
+    color: #0070ba;
+    font-family: pp-sans-big-medium,Helvetica Neue,Arial,sans-serif;
+    font-weight: bolder;
+    font-variant: normal;
+    text-decoration: none;
+    -webkit-transition: color .2s ease-out;
+    -moz-transition: color .2s ease-out;
+    -o-transition: color .2s ease-out;
+    transition: color .2s ease-out;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.forgot:hover, .forgot.focus {
+    text-decoration: underline;
+    outline: 0;
+}
+
+.loginForm > button:first-child {
+    font-family: pp-sans-big-medium,Helvetica Neue,Arial,sans-serif;
+    font-weight: 400;
+    font-variant: normal;
+    font-size: 15px;
+    border-radius: 25px;
+    height: 48px;
+}
+
+.loginForm > button {
+    font-family: pp-sans-big-medium,Helvetica Neue,Arial,sans-serif;
+    font-variant: normal;
+    font-size: 15px;
+    border-radius: 25px;
+    height: 48px;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 32px;
+    border: 0;
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.loginForm > button:first-of-type {
+    margin-top: 30px;
+    background-color: #0070ba;
+    color: white;
+    transition: color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.loginForm > button:first-of-type:hover {
+    background-color: #003087;
+    outline: 0;
+}
+
+.loginForm > button:first-of-type:focus {
+    background-color: #003087;
+    text-decoration: underline;
+    outline: 0;
+    border: 0.125rem solid #0070ba;
+    box-shadow: 0 0 0 0.25rem #bfdbee;
+}
+
+.loginForm > button:last-of-type {
+    background-color: #fff;
+    color: #0070ba;
+    border: 0.0625rem solid #0070ba;
+    transition: color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease;
+}
+
+.loginForm > button:last-of-type:hover {
+    border-color: #003087;
+    box-shadow: inset 0 0 0 0.0625rem #003087;
+    color: #003087;
+}
+
+.loginForm > button:last-of-type:focus {
+    background: 0 0;
+    color: #003087;
+    text-decoration: underline;
+    outline: 0;
+    border: 0.125rem solid #0070ba;
+    box-shadow: 0 0 0 0.25rem #bfdbee;
+}
+
+.divider {
+    position: relative;
+    color: #63676A;
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    background-color: #63676A;
+    width: 46%;
+}
+
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    height: 1px;
+    background-color: #63676A;
+    width: 46%;
+}
+
+#signup, #step2 {
+    display: none;
+}
+
+#next-btn:hover, #btnStep2:hover {
+    color: white !important;
+}
+#next-btn:visited:hover, #next-btn:active:hover, #next-btn:focus:hover, #btnStep2:active:hover, #btnStep2:visited:hover, #btnStep2:focus:hover {
+    color: #003087 !important;
+}
+.wrong {
+    color: red;
+}

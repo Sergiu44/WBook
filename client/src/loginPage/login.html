@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="styles.css" media="all" rel="stylesheet" type="text/css">
+    <title>WBook</title>
+</head>
+<body>
+<main>
+    <section class="left">
+        <card id="login">
+            <img alt="logo" class="logo" src=""/>
+            <form action="" class="loginForm" method="post">
+                <input id="email" name="email" placeholder="Email or mobile phone" type="email"/>
+                <input id="password" name="password" placeholder="Password" type="password"/>
+                <a class="forgot" href="/password-recovery">Forgot password?</a>
+                <button type="submit" id="login-btn">Log in</button>
+                <span class="divider">or</span>
+                <button type="button" id="login-sgnup-btn">Sign up</button>
+            </form>
+        </card>
+
+        <card id="signup">
+            <img alt="logo" class="logo" src=""/>
+            <form action="" class="loginForm" method="post">
+                <input id="username" name="username" placeholder="Username: John123" type="email" />
+                <span id="usernameUsed"></span>
+                <a class="forgot" id="sgnup-login-btn">Already have an account?</a>
+                <button type="button" id="next-btn">Next</button>
+            </form>
+        </card>
+
+        <card id="step2">
+            <img alt="logo" class="logo" src=""/>
+            <form action="" class="loginForm" method="post">
+                <input id="emailStep2" name="email" placeholder="Email or mobile phone" type="email" onkeyup="removeEmailList()"/>
+                <ul id="emailChecks"></ul>
+                <input id="passwordStep2" name="password" placeholder="Password" type="password" onkeyup="removePasswordList()"/>
+                <ul id="passwordChecks"></ul>
+                <button type="button" id="btnStep2">Sign up</button>
+            </form>
+        </card>
+    </section>
+    <section class="right">
+        <img alt="bookshelf" class="loginImg" src="/WBook/client/public/images/bookshelf.jpg"/>
+    </section>
+</main>
+<script src="script.js"></script>
+
+</body>
+</html>
