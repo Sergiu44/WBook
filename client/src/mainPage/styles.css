@@ -98,15 +98,24 @@ header {
     padding-top: 2em;
     color: #3c4172;
     font-family: "Poppins", sans-serif;
-}
-
-.aboutMe {
-    padding: 30px;
     max-width: 80%;
     margin: 0 auto;
 }
 
-.aboutHeader {
+.aboutMe, .contact, .posts {
+    padding: 30px;
+}
+.display {
+    transition: all 1s ease-in;
+    transform: translateY(150px);
+    opacity: 0;
+}
+.display.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.header {
     color: #43485c;
     text-transform: uppercase;
     font-size: 1.8rem;
@@ -118,7 +127,7 @@ header {
     margin-bottom: 20px;
 }
 
-.aboutColumns {
+.aboutColumns, .contactColumns {
     text-align: justify;
     display: flex;
     flex-wrap: wrap;
@@ -162,4 +171,225 @@ header {
     margin-bottom: 5px;
     text-transform: uppercase;
     color: #2a2a2a;
+}
+
+.contact {
+    padding: 0 200px 200px 200px;
+}
+
+.contactTitle {
+    margin-bottom: 50px;
+}
+
+.contactColumns {
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactColumns > .column {
+    min-width: 100%;
+    text-align: center;
+}
+
+.contactColumns > .column .field > label {
+    width: 100%;
+    text-align: left;
+    color: #363636;
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    margin-top: 0.75em;
+}
+
+.contactColumns > .column .field > :is(input, textarea) {
+    padding: 8px 4px;
+    width: 100%;
+    box-shadow: inset 0 0.0625em 0.125em rgb(10 10 10 / 5%);
+    max-width: 100%;
+    background-color: #fff;
+    border-color: #dbdbdb;
+    border-radius: 4px;
+    color: #363636;
+}
+
+.contactBtn {
+    width: 100%;
+    background-color: #43485c;
+    color: white;
+    height: 50px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    border-color: #dbdbdb;
+    border-width: 1px;
+    cursor: pointer;
+    justify-content: center;
+    padding: calc(0.5em - 1px) 1em;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+.contactBtn:active {
+    border-color: #4a4a4a;
+}
+
+.contactBtn:focus {
+    box-shadow: 0 0 0 0.125em rgb(50 115 220 / 25%);
+}
+
+/*Posts CSS*/
+.postsTitle {
+    margin: 3em auto 0;
+    text-align: center;
+}
+.columns-features {
+    display: flex;
+    padding-top: 5rem;
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -0.75rem;
+}
+
+.columns-features > .column {
+    flex: none;
+    width: 33.33%;
+    display: block;
+    padding: 0.75rem;
+}
+
+.card {
+    background-color: #EDEAE5;
+    box-shadow: rgb(0 0 0 / 10%) 0 1px 0;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    max-width: 100%;
+    color: #4a4a4a;
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 10px 16px rgb(0 0 0 / 13%), 0 6px 6px rgb(0 0 0 / 19%);
+}
+
+.card-image {
+    display: block;
+    position: relative;
+}
+
+.card-image > img {
+    width: 100%;
+    height: 100%;
+}
+
+.card-content {
+    background-color: transparent;
+    padding: 1.5rem;
+}
+
+.content {
+    font-size: 14px;
+    margin: 0 1rem;
+}
+
+.content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 0.8em;
+    color: #363636;
+}
+
+.content p {
+    margin-bottom: 1em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.seeMore {
+    padding: 8px 14px;
+    background-color: rgb(149, 170, 197);
+    color: rgb(53, 49, 49);
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/*  Creative button POSTS*/
+.postsBtn {
+    position: relative;
+    font-size: 16px;
+    color: #262626;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+
+.postsBtn:after, .postsBtn:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #003087;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all .3s;
+    opacity: 0;
+    z-index: -1;
+}
+
+.postsBtn:before {
+    left: 0;
+    box-shadow: -100px 0 0 #003087;
+}
+
+.postsBtn:after {
+    right: 0;
+    box-shadow: 100px 0 0 #003087;
+}
+
+.postsBtn:hover:before {
+    left: 45%;
+    transform: translateY(-50%);
+    opacity: 1;
+    box-shadow: -30px 0 0 #003087;
+}
+
+.postsBtn:hover:after {
+    right: 45%;
+    transform: translateY(-50%);
+    opacity: 1;
+    box-shadow: 30px 0 0 #003087;
+}
+
+.postsBtn span {
+    position: absolute;
+    background-color: #003087;
+    border-radius: 8px;
+    width: 200px;
+    height: 50px;
+    z-index: -1;
+    transform: scale(0);
+    transition: all .3s;
+}
+
+.postsBtn:hover span {
+    transform: scale(1);
+    transition-delay: .4s;
+
+}
+
+.postsBtn:hover {
+    color: white;
+    transition-delay: .4s;
 }
