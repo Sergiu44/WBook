@@ -11,15 +11,25 @@ function init() {
         })
     })
 
-    const listItems = document.querySelectorAll('.navigation ul li');
-    for(let i = 0; i< listItems.length; ++i) {
+    const listItems = document.querySelectorAll('.navigation > ul > li');
+    for(let i = 0; i< listItems.length - 1; ++i) {
         listItems[i].addEventListener('click', () => {
             window.scrollTo({
-                top: i===0 ? 0 : (350*(i+1) + (i===listItems.length-1 ? 300 : 0)),
+                top: i === 0 ? 0 : 350*(i+1) + (i === listItems.length - 2 ? 300 : 0),
                 behavior: "smooth"
             });
         })
     }
+
+//    Dropdown functionality
+    let click = document.querySelector('.dropdown-btn');
+    let list = document.querySelector('.dropdown-list');
+
+    click.addEventListener("click",()=>{
+
+        list.classList.toggle('newlist');
+
+    });
 }
 
 function appearElement() {
