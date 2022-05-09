@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css" media="all" type="text/css">
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&family=Roboto&display=swap"
+          rel="stylesheet">
+    <title>Create post</title>
+</head>
+<body>
+
+<div class="nav-wrapper">
+    <div class="left-side">
+
+        <div class="nav-link-wrapper" style="margin-top: 5px">
+            <a href="">Home</a>
+        </div>
+
+    </div>
+
+    <div class="center-side">
+        <img src="../../public/images/logo.png" class="center" alt="logo photo" />
+    </div>
+
+    <div class="right-side">
+        <div class="brand" style="margin-top: 5px">
+            <div>Stanciu Sergiu</div>
+        </div>
+    </div>
+</div>
+
+<main class="container">
+    <h1>Let's create a post</h1>
+
+    <form action="#" method="post" id="formPosts">
+        <section class="row">
+            <h3>Post data</h3>
+            <div class="fields">
+                <div class="field">
+                    <label for="title">Title of the post</label>
+                    <input type="text" name="title" id="title" required/>
+                </div>
+
+                <div class="field">
+                    <label for="resume">Resume of the post</label>
+                    <textarea name="resume" id="resume" maxlength="50" required></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="description">Description of the post</label>
+                    <textarea name="description" id="description" minlength="100" maxlength="1000" required></textarea>
+                </div>
+
+                <div class="field">
+                    <label for="category">Category</label>
+                    <select name="category" id="category" required>
+                        <option value="personal">Personal growth and lifestyle</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="biographies">Biographies, memories, journals</option>
+                        <option value="business">Business, marketing, economy, finance</option>
+                        <option value="spiritual">Spiritual development</option>
+                        <option value="philosophy">Philosophy</option>
+                        <option value="technology">Technology</option>
+                        <option value="computer">Computer science</option>
+                        <option value="others">Others</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <h3>Text stylization</h3>
+            <div class="fields">
+                <div class="field">
+                    <label for="color">Color of the text(hex color, including #)</label>
+                    <input type="text" name="color" id="color" required/>
+                </div>
+
+                <div class="field">
+                    <label for="font-size">Font size</label>
+                    <input type="number" name="font-size" id="font-size" required/>
+                </div>
+
+                <div class="field">
+                    <label for="font-family">Font family</label>
+                    <select name="font-family" id="font-family" required>
+                        <option value="roboto" class="roboto">Roboto</option>
+                        <option value="kaushan" class="kaushan">Kaushan</option>
+                        <option value="poppins" class="poppins">Poppins</option>
+                        <option value="sans-serif" class="sans-serif">Sans-serif</option>
+                        <option value="raleway" class="raleway">Raleway</option>
+                        <option value="anton" class="anton">Anton</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="row">
+            <h3>Personal data</h3>
+            <div class="fields">
+                <div class="field">
+                    <label for="nickname">Nickname*</label>
+                    <input type="text" name="nickname" id="nickname" />
+                </div>
+
+                <div class="field">
+                    <label for="social-media">Link to a social media profile*</label>
+                    <input type="text" name="social-media" id="social-media" />
+                </div>
+
+                <div class="field">
+                    <p class="legend">* - optional</p>
+                    <button type="submit" id="submitPost">Submit form</button>
+                </div>
+            </div>
+        </section>
+    </form>
+</main>
+</body>
+</html>

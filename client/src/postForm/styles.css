@@ -1,0 +1,142 @@
+body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Header */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+    border-bottom: 2px solid #4a4a4a;
+}
+
+.left-side {
+    display: flex;
+}
+
+.nav-wrapper > .left-side > div {
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+.nav-link-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+    cursor: pointer;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+    color: black !important;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+    cursor: pointer;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover {
+    color: black;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+}
+
+/* Form */
+.container {
+    width: 75%;
+    margin: 50px auto 0;
+}
+
+.container h1 {
+    margin-bottom: 30px;
+}
+
+.container h3 {
+    font-weight: 300;
+}
+
+#formPosts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.row {
+}
+
+.row > .fields {
+    min-width: 50%;
+}
+
+#formPosts > .row {
+    margin-top: 15px;
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #8a8a8a;
+
+}
+
+.fields > .field {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.field :is(input ,textarea, select) {
+    padding: 10px;
+    width: 50%;
+}
+
+.field > label {
+    font-weight: 600;
+}
+
+.legend {
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+#submitPost {
+    margin: 20px 0 50px 0;
+    padding: 12px 16px;
+    background-color: rgba(255, 163, 12, 1);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+    color: whitesmoke;
+}
+
+#submitPost:hover {
+    background-color: rgba(255, 163, 12, 0.8);
+}
+
+#submitPost:focus, #submitPost:active {
+    background-color: rgba(255, 200, 100, 1);
+    outline: 2px solid rgba(255, 150, 100, 1);
+    outline-offset: 3px;
+}
+
