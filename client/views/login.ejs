@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>WBook</title>
+    <link rel="stylesheet" type="text/css" href="css/loginStyle.css" media="all">
+    <script type="text/javascript">
+            window.addEventListener('load', () => {
+                        const loginBtn = document.getElementById('login-btn');
+                        const profiles = <%- JSON.stringify(profiles) %>
+                        loginBtn.addEventListener('click', () => {
+                            const email = document.getElementById('email').value;
+                            const password = document.getElementById('password').value;
+                            let invalid = true;
+                            for (const profile of profiles) {
+                                if (email === profile['email'] && password === profile['password']) {
+                                invalid = false;
+                                    localStorage.setItem('email', email);
+                                    window.location.href = 'http://localhost:6969';
+                                    break;
+                                }
+                            }
+                            if(invalid) {
+                                alert('Datele introduse nu sunt bune');
+                            }
+                        })
+
+                        const nextBtn = document.querySelector("#next-btn");
+                        nextBtn.addEventListener('click', () => {
+                            const username = document.getElementById("username").value;
+                        //    Get all the users from server to check if it exists or not
+
+                            if (username) {
+                                const profiles = <%- JSON.stringify(profiles) %>;
+                                console.log(profiles);
+                                let invalid = false;
+                                for (const profile of profiles) {
+                                    if (username === profile['username']) {
+                                        invalid = true;
+                                        document.getElementById("usernameUsed").textContent = "This username is already used";
+                                        document.getElementById("usernameUsed").classList.add('wrong');
+                                        break;
+                                    }
+                                }
+                                if(!invalid) {
+                                    document.getElementById("signup").style.display = 'none';
+                                    document.getElementById('step2').style.display = 'flex';
+                                }
+                            } else {
+                                document.getElementById("usernameUsed").textContent = "You need to set an username first";
+                                document.getElementById("usernameUsed").classList.add('wrong');
+                            }
+                        })
+
+            })
+        </script>
+    <script src="js/loginScript.js" defer></script>
+</head>
+<body>
+<main>
+    <section class="left">
+        <card id="login">
+            <img alt="logo" class="logo" src="images/logo.png"/>
+            <form class="loginForm">
+                <input id="email" placeholder="Email or mobile phone" type="email"/>
+                <input id="password" placeholder="Password" type="password"/>
+                <button type="button" id="login-btn">Log in</button>
+                <span class="divider">or</span>
+                <button type="button" id="login-sgnup-btn">Sign up</button>
+            </form>
+        </card>
+
+        <card id="signup">
+            <img alt="logo" class="logo" src="images/logo.png"/>
+            <form class="loginForm">
+                <input id="username" name="username" placeholder="Username: John123" type="email" />
+                <span id="usernameUsed"></span>
+                <a class="forgot" id="sgnup-login-btn">Already have an account?</a>
+                <button type="button" id="next-btn">Next</button>
+            </form>
+        </card>
+
+        <card id="step2">
+            <img alt="logo" class="logo" src="/images/logo.png"/>
+            <form action="/" class="loginForm" method="post">
+                <input id="emailStep2" placeholder="Email or mobile phone" type="email" onkeyup="removeEmailList()"/>
+                <ul id="emailChecks"></ul>
+                <input id="passwordStep2" placeholder="Password" type="password" onkeyup="removePasswordList()"/>
+                <ul id="passwordChecks"></ul>
+                <button type="button" id="btnStep2">Sign up</button>
+            </form>
+        </card>
+    </section>
+    <section class="right">
+        <img alt="bookshelf" class="loginImg" src="images/bookshelf.jpg"/>
+    </section>
+</main>
+</body>
+</html>

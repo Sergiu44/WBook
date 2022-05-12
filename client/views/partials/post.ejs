@@ -1,0 +1,26 @@
+<div class="card <%- post.fontFamily %>" style="background-color: <%- post.color %>">
+            <div class="card_content">
+                <div class="card_title">
+                    <div class="card_title_text">
+                        <h1 class="card_heading"><%= post.title %></h1>
+                        <span class="card_text">by <%= post.nickname %></span>
+                    </div>
+                    <div class="card_title_category">
+                        <% post.category %>
+                    </div>
+                </div>
+                <div class="card_resume" style="font-size: <%- post.fontSize %>px;">
+                    <h1 class="card_subtitle">Resume: </h1>
+                    <p class="card_text"><%= post.resume %></p>
+                </div>
+
+                 <div class="card_description" style="font-size: <%- post.fontSize %>px;">
+                    <h1 class="card_subtitle">Description: </h1>
+                    <p class="card_text"><%= post.description %></p>
+                 </div>
+
+                <div>
+                    <span class="card_link">Link: <%= post.link %></span>
+                </div>
+            </div>
+        </div>

@@ -84,7 +84,7 @@ body, * {
 }
 
 .row > .fields {
-    min-width: 50%;
+    width: 60%;
 }
 
 #formPosts > .row {
@@ -106,6 +106,7 @@ body, * {
 .field :is(input ,textarea, select) {
     padding: 10px;
     width: 50%;
+    flex: 0 0 auto;
 }
 
 .field > label {

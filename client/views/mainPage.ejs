@@ -6,8 +6,8 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>WBook</title>
-    <script src="script.js"></script>
-    <link href="styles.css" media="all" rel="stylesheet" type="text/css">
+    <script src="js/mainScript.js" defer></script>
+    <link href="css/mainStyle.css" media="screen" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&family=Roboto&display=swap"
@@ -18,7 +18,7 @@
 <!--    Header -> contains a main page and the dropdown-->
 <header>
     <article class="homeImage">
-        <img alt="homePage image" src="../../public/images/homePage.jpg">
+        <img alt="homePage image" src="images/homePage.jpg">
         <section class="personalCard">
             <h2 class="subtitle">Hi there, I'm</h2>
             <h1 class="title">Sergiu</h1>
@@ -33,12 +33,13 @@
                 <li>Posts</li>
                 <li>Contact</li>
                 <li class="dropdown">
-                    <button class="dropdown-btn">^</button>
-                    <ul class="dropdown-list">
-                        <li class="link">Stanciu Sergiu</li>
-                        <li class="link"><button>Settings</button></li>
-                        <li class="link"><button>Log out</button></li>
-                    </ul>
+                    <div class="containerDropdown">
+                                <button class="click">Click me</button>
+                                <ul class="list">
+                                    <li class="links" id="logOutBtn">Log out</button>
+                                </div>
+
+                            </div>
                 </li>
             </ul>
             <!--                Mini profile icon for account-->
@@ -155,7 +156,7 @@
                 </div>
             </div>
         </div>
-        <a href="#" class="postsBtn"><span></span>See all posts</a>
+        <a href="/search" class="postsBtn"><span></span>See all posts</a>
     </div>
 
 
@@ -171,15 +172,15 @@
                 </div>
                 <div class="column">
                     <form
-                            action="https://formspree.io/email@example.com"
+                            action="/"
                             method="POST"
+                            id="contactForm"
                     >
                         <div class="field">
                             <label class="label" for="name">Name</label>
                             <input
                                     class="input"
                                     id="name"
-                                    name="Name"
                                     placeholder="Ex. Jane Smith"
                                     type="text"
                             />
@@ -189,7 +190,6 @@
                             <input
                                     class="input"
                                     id="email"
-                                    name="Email"
                                     placeholder="Ex. hello@arctheme.com"
                                     type="email"
                             />
@@ -199,7 +199,6 @@
                             <textarea
                                     class="textarea"
                                     id="message"
-                                    name="Message"
                                     placeholder="Textarea"
                             ></textarea>
                         </div>

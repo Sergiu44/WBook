@@ -5,11 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css" media="all" type="text/css">
-    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&family=Roboto&display=swap"
-          rel="stylesheet">
+              rel="stylesheet">
     <title>Create post</title>
+    <link rel="stylesheet" href="/css/postFormStyle.css" media="all" type="text/css">
+        <script src="/js/postFormScript.js" defer></script>
 </head>
 <body>
 
@@ -17,13 +17,13 @@
     <div class="left-side">
 
         <div class="nav-link-wrapper" style="margin-top: 5px">
-            <a href="">Home</a>
+            <a href="/">Home</a>
         </div>
 
     </div>
 
     <div class="center-side">
-        <img src="../../public/images/logo.png" class="center" alt="logo photo" />
+        <img src="/images/logo.png" class="center" alt="logo photo" />
     </div>
 
     <div class="right-side">
@@ -36,28 +36,28 @@
 <main class="container">
     <h1>Let's create a post</h1>
 
-    <form action="#" method="post" id="formPosts">
+    <form action="/posts" method="post" id="formPosts">
         <section class="row">
             <h3>Post data</h3>
             <div class="fields">
                 <div class="field">
                     <label for="title">Title of the post</label>
-                    <input type="text" name="title" id="title" required/>
+                    <input type="text" id="title" required/>
                 </div>
 
                 <div class="field">
                     <label for="resume">Resume of the post</label>
-                    <textarea name="resume" id="resume" maxlength="50" required></textarea>
+                    <textarea id="resume" maxlength="50" required></textarea>
                 </div>
 
                 <div class="field">
                     <label for="description">Description of the post</label>
-                    <textarea name="description" id="description" minlength="100" maxlength="1000" required></textarea>
+                    <textarea id="description" minlength="100" maxlength="1000" required></textarea>
                 </div>
 
                 <div class="field">
                     <label for="category">Category</label>
-                    <select name="category" id="category" required>
+                    <select id="category" required>
                         <option value="personal">Personal growth and lifestyle</option>
                         <option value="fiction">Fiction</option>
                         <option value="biographies">Biographies, memories, journals</option>
@@ -77,12 +77,12 @@
             <div class="fields">
                 <div class="field">
                     <label for="color">Color of the text(hex color, including #)</label>
-                    <input type="text" name="color" id="color" required/>
+                    <input type="text" id="color" required/>
                 </div>
 
                 <div class="field">
-                    <label for="font-size">Font size</label>
-                    <input type="number" name="font-size" id="font-size" required/>
+                    <label for="font-size">Font size(in pixel)</label>
+                    <input type="number" name="font-size" id="font-size" min="1" required/>
                 </div>
 
                 <div class="field">
@@ -104,12 +104,12 @@
             <div class="fields">
                 <div class="field">
                     <label for="nickname">Nickname*</label>
-                    <input type="text" name="nickname" id="nickname" />
+                    <input type="text" id="nickname" />
                 </div>
 
                 <div class="field">
                     <label for="social-media">Link to a social media profile*</label>
-                    <input type="text" name="social-media" id="social-media" />
+                    <input type="text" id="social-media" />
                 </div>
 
                 <div class="field">

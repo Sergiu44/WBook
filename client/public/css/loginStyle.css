@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    line-height: 0;
+}
+
 .left {
     position: absolute;
     top: 0;
@@ -197,6 +201,14 @@
 #next-btn:visited:hover, #next-btn:active:hover, #next-btn:focus:hover, #btnStep2:active:hover, #btnStep2:visited:hover, #btnStep2:focus:hover {
     color: #003087 !important;
 }
+
 .wrong {
+    display: block;
+    width: 300px;
+    height: 15px;
     color: red;
+}
+
+.logo {
+    width: 150px;
 }
