@@ -22,6 +22,9 @@ app.get('/', (_req, res) => {
 app.get('/search', (_req, res) => {
     res.render('searchPage');
 })
+app.get('*', (_req, res) => {
+    res.render('404error');
+})
 
 
 app.listen(PORT, () => {

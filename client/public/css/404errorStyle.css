@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    color: #121212;
+}
+
+#errorTitle {
+    margin-top: -30px;
+}
+
+#errorTitle > .reflectionTitle {
+    font-weight: bolder;
+    line-height: 90px;
+    font-size: 100px;
+    font-family: "Roboto", sans-serif;
+    margin: 0 auto;
+}
+
+#errorTitle > p {
+    font-weight: 400;
+    line-height: 20px;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    margin-top: 60px;
+}
+
+/* Reflection animation */
+.reflectionTitle {
+    width: max-content;
+    user-select: none;
+    pointer-events: none;
+    padding: 0 10px;
+}
+
+.reflectionTitle > * {
+    display: block;
+    background-image: url("../images/bookshelf.jpg");
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.reflectionTitle > :first-child {
+    border-bottom: 2px solid black;
+}
+
+.reflectionTitle > :last-child {
+    margin-top: 15px;
+    transform: rotateX(180deg) translateY(15px);
+    --gradient: repeating-linear-gradient(
+        transparent,
+    transparent 3px,
+    white 3px,
+    white 4px
+    );
+    -webkit-mask-image: var(--gradient);
+    mask-image: var(--gradient);
+    animation: mask-move 5s infinite ease-in-out alternate-reverse;
+}
+
+@keyframes mask-move {
+    from {
+        filter: none;
+    }
+    to {
+        filter: blur(3px) brightness(1);
+    }
+}

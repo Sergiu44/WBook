@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
         }
         console.log("dadadada");
         const xhttp = new XMLHttpRequest();
-        xhttp.open('POST', '/posts', false);
+        xhttp.open('POST', '/posts', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(`title=${title}&resume=${resume}&description=${description}&category=${category}&color=${color}&fontSize=${fontSize}&fontFamily=${fontFamily}&nickname=${nickname}&link=${link}`);
 
