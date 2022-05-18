@@ -38,7 +38,6 @@ window.addEventListener('load', () => {
             alert("The introduced linked is not valid or secure");
             return;
         }
-        console.log("dadadada");
         const xhttp = new XMLHttpRequest();
         xhttp.open('POST', '/posts', true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

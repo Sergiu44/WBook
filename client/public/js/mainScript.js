@@ -12,7 +12,6 @@ function init() {
         element.addEventListener('click', e => {
             e.preventDefault();
             const text = element.previousSibling.previousSibling;
-            console.log(text);
             text.style.textOverflow = 'unset';
             text.style.overflow = 'unset';
             text.style.whiteSpace = 'unset';

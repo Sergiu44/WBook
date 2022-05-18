@@ -35,7 +35,6 @@
 
                             if (username) {
                                 const profiles = <%- JSON.stringify(profiles) %>;
-                                console.log(profiles);
                                 let invalid = false;
                                 for (const profile of profiles) {
                                     if (username === profile['username']) {

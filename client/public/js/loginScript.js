@@ -103,7 +103,8 @@ function verifyConditions(listToAppend, regexObj, valueToCheck, valid) {
     return valid;
 }
 
-function verifyInputs() {
+function verifyInputs(e) {
+    e.stopPropagation();
     const emailValue = document.getElementById("emailStep2").value;
     const passwordValue = document.getElementById("passwordStep2").value;
     const usernameValue = document.getElementById('username').value;
@@ -125,7 +126,7 @@ function verifyInputs() {
         xhttp.open('POST', `/login`, true);
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send(`email=${emailValue}&password=${passwordValue}&username=${usernameValue}`);
-        window.location.href = 'http://localhost:6969';
+        window.location.href = 'http://localhost:6969/';
     } else {
         console.log("Nu merge!")
     }

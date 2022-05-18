@@ -26,11 +26,9 @@ function init() {
     }, 200);
 
     const anchorTags = [...document.querySelectorAll('.subtitle')];
-    console.log(anchorTags[0]);
     if(anchorTags.length) {
         anchorTags.map(anchorTag =>
             anchorTag.addEventListener('click', e => {
-                console.log("DAAAA");
                 e.preventDefault();
                 window.location.href = `http://localhost:6969/posts?category=${anchorTag.id}`;
             })
